@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1a1a1a;
+  }
+  
+  .scene {
+    perspective: 1200px;
+  }
+  
+  .primeradiant {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transform: rotateX(30deg) rotateY(30deg);
+    animation: rotate 10s infinite linear;
+  }
+  
+  .face {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    clip-path: polygon(50% 0%, 95% 35%, 79% 92%, 21% 92%, 5% 35%);
+    background-image: url('mars-texture.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transform-style: preserve-3d;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Position each face using CSS 3D transforms */
+  .face1 { transform: rotateY(0deg) rotateX(58.2825deg) translateZ(80px); }
+  .face2 { transform: rotateY(72deg) rotateX(58.2825deg) translateZ(80px); }
+  .face3 { transform: rotateY(144deg) rotateX(58.2825deg) translateZ(80px); }
+  .face4 { transform: rotateY(216deg) rotateX(58.2825deg) translateZ(80px); }
+  .face5 { transform: rotateY(288deg) rotateX(58.2825deg) translateZ(80px); }
+  .face6 { transform: rotateY(36deg) rotateX(-58.2825deg) translateZ(80px); }
+  .face7 { transform: rotateY(108deg) rotateX(-58.2825deg) translateZ(80px); }
+  .face8 { transform: rotateY(180deg) rotateX(-58.2825deg) translateZ(80px); }
+  .face9 { transform: rotateY(252deg) rotateX(-58.2825deg) translateZ(80px); }
+  .face10 { transform: rotateY(324deg) rotateX(-58.2825deg) translateZ(80px); }
+  .face11 { transform: rotateX(0deg) translateZ(80px); }
+  .face12 { transform: rotateX(180deg) translateZ(80px); }
+  
+  /* Adding a rotation animation */
+  @keyframes rotate {
+    from {
+      transform: rotateX(30deg) rotateY(30deg);
+    }
+    to {
+      transform: rotateX(30deg) rotateY(390deg);
+    }
+  }
+  
